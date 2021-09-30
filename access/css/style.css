@@ -289,10 +289,9 @@ footer {
     display: flex;
     background: var(--background--);
     justify-content: space-between;
-    padding: 0 20px;
+    padding:20px;
     align-items: center;
     color: var(--light-gray-blue--);
-    height: 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -351,4 +350,26 @@ footer .filter .selected {
 .todoLists .editing .edit{
     display: block;
     z-index: 3;
+}
+
+/* Responsive */
+
+.mobileFooter{
+    display: none;
+}
+
+@media (max-width:739px){
+    .deskopFooter{
+        display: none;
+    }
+    .mobileFooter{
+        display: block;
+    }
+    .root {
+        margin: 100px 30px 40px;
+    }
+    .view .delele{
+        display: flex;
+        width: 100%;
+    }
 }
