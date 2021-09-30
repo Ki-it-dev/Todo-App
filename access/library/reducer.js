@@ -8,8 +8,16 @@ const init = {
         active: todo => !todo.completed,
         completed: todo => todo.completed,
     },
-    editIndex: null
+    editIndex: null,
+    theme:{
+        light: 1,
+        dark: 2,
+    }
 }
+//Theme
+var theme = 1;
+const body = document.querySelector('body')
+const bgImageTop = document.querySelector('.bgImgHeader')
 
 const actions = {
     add({todos},title){
@@ -55,6 +63,23 @@ const actions = {
     },
     cancelEdit(state){
         state.editIndex = null
+    },
+    switchTheme(){
+        theme++;
+        switch(theme){
+            case 2:
+                body.classList.add('darkTheme');
+                document.querySelector('.themeIcon').classList.add('dark');
+                bgImageTop.style.background = 'url(./images/bg-desktop-dark.jpg)';
+            break;
+            
+            case 3:
+                theme = 1;
+                body.classList.remove('darkTheme');
+                document.querySelector('.themeIcon').classList.remove('dark');
+                bgImageTop.style.background = 'url(./images/bg-desktop-light.jpg)';
+            break;
+        }
     }
 }
 

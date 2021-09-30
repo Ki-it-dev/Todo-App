@@ -141,6 +141,10 @@ header .themeIcon {
     cursor: pointer;
 }
 
+.themeIcon.dark{
+    background: url(../../images/icon-sun.svg);
+}
+
 header .todoMain .toggle-all:checked+label::after, .view .toggle:checked+label::after {
     content: '✔';
     display: block;

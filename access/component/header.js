@@ -6,7 +6,9 @@ function header({todos,filters}) {
         <header>
           <div class="flexSpaceBetween">
             <h1 class="titleHeader">todo</h1>
-            <div class="themeIcon"></div>
+            <div 
+              class="themeIcon" onclick="dispatch('switchTheme')">
+            </div>
           </div>
           <div class="todoMain">
             <input 
