@@ -1,13 +1,14 @@
 import html from "../library/core.js";
 import { connect } from "../library/store.js"
 
-function header({todos,filters}) {
+function header({todos,filters,themeSwitch}) {
     return html`
         <header>
           <div class="flexSpaceBetween">
             <h1 class="titleHeader">todo</h1>
             <div 
-              class="themeIcon" onclick="dispatch('switchTheme')">
+              class="themeIcon ${themeSwitch === 2 && 'dark'}" 
+              onclick="dispatch('switchTheme')">
             </div>
           </div>
           <div class="todoMain">

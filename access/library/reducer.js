@@ -9,7 +9,7 @@ const init = {
         completed: todo => todo.completed,
     },
     editIndex: null,
-    theme:{
+    themeSwitch:{
         light: 1,
         dark: 2,
     }
@@ -64,20 +64,20 @@ const actions = {
     cancelEdit(state){
         state.editIndex = null
     },
-    switchTheme(){
+    switchTheme(state){
         theme++;
         switch(theme){
             case 2:
                 body.classList.add('darkTheme');
-                document.querySelector('.themeIcon').classList.add('dark');
                 bgImageTop.style.background = 'url(./images/bg-desktop-dark.jpg)';
+                state.themeSwitch = 2;
             break;
-            
+
             case 3:
                 theme = 1;
                 body.classList.remove('darkTheme');
-                document.querySelector('.themeIcon').classList.remove('dark');
                 bgImageTop.style.background = 'url(./images/bg-desktop-light.jpg)';
+                state.themeSwitch = 1;
             break;
         }
     }
